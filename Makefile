@@ -1,7 +1,9 @@
 # Makefile
- install: # установить зависимости
- 	npm ci install
- brain-games:
- 	node bin/brain-games.js
- publish:
- 	npm publish --dry-run
+install: # установить зависимости
+	npm ci install
+
+brain-games:
+	node bin/brain-games.js
+
+publish:
+	npm publish --dry-run
