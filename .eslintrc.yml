@@ -5,12 +5,13 @@ extends: eslint:recommended
 overrides: []
 parserOptions:
   ecmaVersion: latest
-  sourceType: module
-rules: {
-  no-console: 0
+  sourceType: moduler
+
+rules: 
+import/extensions: "off"
+  no-console: "off"
+  no-var: "error"
   import/extensions: 
     - error
     - js: always
-  no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
-  make lint:npx eslint
-}
+
