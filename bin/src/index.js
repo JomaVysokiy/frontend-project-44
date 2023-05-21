@@ -3,37 +3,21 @@ import readlineSync from 'readline-sync'
 export const QuestionEvenOrOddNumber = () => {
 const number = Math.ceil(Math.random() * 100)
 
-let answer = ''
+const goodOrBadAnswer = ['good','bad']
 
-if (number % 2 === 0 && answer === 'yes') {
-  const game = readlineSync.question('Question: ' + number + ' ') 
-  answer = 'good'
-  console.log(game)
+const game = readlineSync.question('Question: ' + number + ' ') 
+
+let arr = game.split(' ')
+const answer = arr[arr.length - 1]
+
+if (number % 2 === 0 && answer === 'yes' || number % 2 !== 0 && answer === 'no') {
   console.log('Your answer: ' + number)
-  return answer 
+  return goodOrBadAnswer[0]  
 } else {
-  const game = readlineSync.question('Question: ' + number + ' ')
-  answer = 'bad'
-  console.log(game)
   console.log('Your answer: ' + number)
-  return answer 
+  return goodOrBadAnswer[1] 
 }
 }
-
-
-// export const QuestionEvenOrOddNumber = () => {
-//   const number = Math.ceil(Math.random() * 100)
-//     if (readlineSync.keyInYN('Question: ' + number + ' ') && number % 2 === 0) {
-//   // 'Y' key was pressed.
-//     console.log('good');
-// } else {
-//     console.log('bad');
-//   }
-// }
- // если число четное и мы нажали да или число нечетное и мы нажали нет,то good 
-// если число нечетное и мы нажали да или число четное и мы нажали нет,то bad
-
-// подходит ли нам вообще именно этот метод?
 
 // export const game = () => {
 //   const rounds = 3
@@ -45,5 +29,3 @@ if (number % 2 === 0 && answer === 'yes') {
 //   }
 // }
 // }
-
-
