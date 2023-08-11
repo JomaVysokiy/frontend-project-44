@@ -8,6 +8,9 @@ brain-games:
 brain-even:
 	node bin/brain-even.js
 
+inde.js:
+	node src/index.js
+
 publish:
 	npm publish --dry-run
 
