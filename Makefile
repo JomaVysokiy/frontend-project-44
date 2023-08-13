@@ -8,7 +8,10 @@ brain-games:
 brain-even:
 	node bin/brain-even.js
 
-inde.js:
+brain-calc:
+	node bin/brain-calc.js
+
+index.js:
 	node src/index.js
 
 publish:
