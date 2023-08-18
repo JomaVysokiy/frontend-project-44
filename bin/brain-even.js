@@ -12,55 +12,22 @@ const game = () => {
     console.log('Question: ' + number)
     const answer = readlineSync.question('Your answer: ')
 
-    const numberIsEven = (number) => number % 2 === 0  
-    const isCorrectAnswer = (answer) => {
-        if (numberIsEven(number) && answer === 'yes') {  
-          return true 
-        }
-        if (!numberIsEven(number) && answer === 'no') {         
-          return true
-        }
-      }
+    const numberIsEven = (number) => number % 2 === 0   
 
-    if (isCorrectAnswer(answer)) {
-      console.log('Correct!')
-    } else {     
-      const isNotCorrectAnswer = (answer) => {
-        if (answer !== 'yes' || answer !== 'no') {
-          return true
-        }
-      }
-
-      // просто пропускает или не видит коректный ответ
-    if (isNotCorrectAnswer(answer)) {
-      if (numberIsEven(answer) && isCorrectAnswer(answer)) {
-        const correctAnswer = 'yes'
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
-        console.log(`Let's try again, ${name}!`)
-        return
-      } else if (!numberIsEven(number) && answer === 'no') {
-        const correctAnswer = 'no'
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
-        console.log(`Let's try again, ${name}!`)
-        return
-      }
-
+    let correctAnswer = 'yes'
+    if (!numberIsEven(number)) {
+      correctAnswer = 'no'
     }
-      
-    // я пытался упростить эти условия но не могу вывести именно правильный ответ
-      if (answer === 'yes' ) {
-        console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.`)
-        console.log(`Let's try again, ${name}!`)
+
+    if (answer !== correctAnswer) {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
         return
-      } else if (answer === 'no') {
-        console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.`)
-        console.log(`Let's try again, ${name}!`)
-        return
-      }      
-      break
-    } 
-  }
-  console.log(`Congratulations, ${name}!`)
+        // не знаю как реализовать correctAnswer
+    } else {
+      console.log('Correct!')         
+    }    
+  }      
+console.log(`Congratulations, ${name}!`)
 }
 
 game()
