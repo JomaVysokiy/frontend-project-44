@@ -21,8 +21,8 @@ const game = () => {
 
     if (answer !== correctAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
-        return
-        // не знаю как реализовать correctAnswer
+      console.log(`Let's try again, ${name}!`)
+      return
     } else {
       console.log('Correct!')         
     }    
