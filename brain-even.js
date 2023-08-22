@@ -29,5 +29,4 @@ const game = () => {
   }      
 console.log(`Congratulations, ${userName}!`)
 }
-
 game()

@@ -7,7 +7,6 @@ console.log(`Hello, ${userName}!`)
 console.log('What is the result of the expression?')
 
 for (let i = 0; i < 3; i++) {
-    // посмотреть как будут работать константы
     const number1 = Math.ceil(Math.random() * 100)
     const number2 = Math.ceil(Math.random() * 100)
     const operations = ['+','-','*']
