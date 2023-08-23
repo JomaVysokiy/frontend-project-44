@@ -7,27 +7,27 @@ console.log(`Hello, ${name}!`)
 console.log('What is the result of the expression?')
 
 for (let i = 0; i < 3; i++) {
-    // посмотреть как будут работать константы
-    const number1 = Math.ceil(Math.random() * 100)
-    const number2 = Math.ceil(Math.random() * 100)
+    const num1 = Math.ceil(Math.random() * 100)
+    const num2 = Math.ceil(Math.random() * 100)
     const operations = ['+','-','*']
     const randomOperation = operations[Math.floor(Math.random()*operations.length)]
-    const expression = `${number1} ${randomOperation} ${number2}`
+    const expression = `${num1} ${randomOperation} ${num2}`
     console.log(`Question: ${expression}`)
 
     let correctAnswer = 0
     if (randomOperation === '+') {
-        const result =  number1 + number2
+        const result =  num1 + num2
         correctAnswer = `${result}`
-    } else if (randomOperation === '-') {
-        const result =  number1 - number2
+    }  
+    if (randomOperation === '-') {
+        const result =  num1 - num2
         correctAnswer = `${result}`
-    } else if (randomOperation === '*') {
-        const result =  number1 * number2
+    } 
+    if (randomOperation === '*') {
+        const result =  num1 * num2
         correctAnswer = `${result}`
     }
 
-    console.log(`Подсказка: ${correctAnswer}`)
     const answer = readlineSync.question('Your answer: ')
     
     if (answer !== correctAnswer) {
@@ -36,8 +36,8 @@ for (let i = 0; i < 3; i++) {
         return
     } else {
         console.log('Correct!')
+        }
     }
-}
     console.log(`Congratulations, ${name}!`)
 }
 

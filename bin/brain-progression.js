@@ -1,20 +1,19 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync'
 const game = () => {
-    console.log('Welcome to the Brain Games!');
-    const userName = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${userName}!`);
-  
-    console.log('What number is missing in the progression?');
+    console.log('Welcome to the Brain Games!')
+    const userName = readlineSync.question('May I have your name? ')
+    console.log(`Hello, ${userName}!`)
+    console.log('What number is missing in the progression?')
   
     for (let i = 0; i < 3; i += 1) {
         
-        const number1 = Math.ceil(Math.random() * 100)
-        const number2 = Math.ceil(Math.random() * 100)
+        const num1 = Math.ceil(Math.random() * 100)
+        const num2 = Math.ceil(Math.random() * 100)
 
-        const progression = [number1] 
+        const progression = [num1] 
         for (let i = 0;i < 10; i++) {
-            progression.push(progression[i] + number2)
+            progression.push(progression[i] + num2)
         }
       
         const randomIndex = Math.ceil(Math.random() * 10)
@@ -23,18 +22,17 @@ const game = () => {
         const question = `${progression}`
         
         console.log(`Question: ${question}`);
-        console.log(`Подсказка: ${correctAnswer}`)
-        const yourAnswer = readlineSync.question('Your answer: ');
+        const yourAnswer = readlineSync.question('Your answer: ')
   
         if (yourAnswer === correctAnswer) {
             console.log('Correct!');
         } else {
-            console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+            console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
             console.log(`Let's try again, ${userName}!`);
-            return;
+            return
         }
     }
     console.log(`Congratulations, ${userName}!`)
-  };
+}
 
 game()

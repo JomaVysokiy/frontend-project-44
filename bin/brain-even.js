@@ -7,15 +7,15 @@ const game = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".')
        
   for (let i = 0 ; i < 3 ; i++) {
-    let number = Math.ceil(Math.random() * 100)
+    const num = Math.ceil(Math.random() * 100)
     
-    console.log('Question: ' + number)
+    console.log('Question: ' + num)
     const answer = readlineSync.question('Your answer: ')
 
-    const numberIsEven = (number) => number % 2 === 0   
+    const numberIsEven = (num) => num % 2 === 0   
 
     let correctAnswer = 'yes'
-    if (!numberIsEven(number)) {
+    if (!numberIsEven(num)) {
       correctAnswer = 'no'
     }
 
@@ -24,10 +24,10 @@ const game = () => {
       console.log(`Let's try again, ${name}!`)
       return
     } else {
-      console.log('Correct!')         
-    }    
-  }      
-console.log(`Congratulations, ${name}!`)
+      console.log('Correct!')
+    }
+  }
+  console.log(`Congratulations, ${name}!`)
 }
 
 game()
