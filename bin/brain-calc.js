@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import game from '/root/projects/frontend-project-44/src/calc.js'
+import game from '../calc.js'
 
 game()
