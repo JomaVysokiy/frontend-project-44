@@ -5,22 +5,21 @@ const game = () => {
     const userName = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${userName}!`);
   
-    console.log('What number is missing in the progression?');
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   
     for (let i = 0; i < 3; i += 1) {
-        
-        const number1 = Math.ceil(Math.random() * 100)
-        const number2 = Math.ceil(Math.random() * 100)
+        const number = Math.ceil(Math.random() * 100)
+        const question = `${number}`
 
-        const progression = [number1] 
-        for (let i = 0;i < 10; i++) {
-            progression.push(progression[i] + number2)
+        let correctAnswer = ''
+
+        if (number < 2) {
+            correctAnswer = 'no'
         }
-      
-        const randomIndex = Math.ceil(Math.random() * 10)
-        const correctAnswer = `${progression[randomIndex]}`
-        progression[randomIndex] = '..'
-        const question = `${progression}`
+
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            number % i === 0 ? correctAnswer = 'no' : correctAnswer = 'yes'
+        }
         
         console.log(`Question: ${question}`);
         console.log(`Подсказка: ${correctAnswer}`)
@@ -35,6 +34,6 @@ const game = () => {
         }
     }
     console.log(`Congratulations, ${userName}!`)
-  };
+}
 
 game()
