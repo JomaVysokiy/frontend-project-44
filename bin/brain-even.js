@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import game from '/root/projects/frontend-project-44/src/even.js'
+import game from '../src/games/even.js'
 
 game()

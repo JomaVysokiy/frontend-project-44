@@ -36,4 +36,4 @@ const game = () => {
   console.log(`Congratulations, ${userName}!`)
 }
 
-game()
+export default game
