@@ -15,10 +15,10 @@ import game from '../index.js'
 
 //     const numberIsEven = (num) => num % 2 === 0   
 
-//     let correctAnswer = 'yes'
-//     if (!numberIsEven(num)) {
-//       correctAnswer = 'no'
-//     }
+    // let correctAnswer = 'yes'
+    // if (!numberIsEven(num)) {
+    //   correctAnswer = 'no'
+    // }
 
 //     if (answer !== correctAnswer) {
 //       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
@@ -31,6 +31,25 @@ import game from '../index.js'
 //   console.log(`Congratulations, ${userName}!`)
 // }
 
-game()
+const description = 'Answer "yes" if the number is even, otherwise answer "no".'
+const numberIsEven = (num) => num % 2 === 0
 
-export default game
+    const evenGame = () => {
+        const runGame = () => {
+            const num = Math.ceil(Math.random() * 100)
+            const question = `${num}`
+            // correctAnswer
+            let correctAnswer = 'yes'
+
+            if (!numberIsEven(num)) {
+              correctAnswer = 'no'
+            }
+            return [question,correctAnswer]
+        }
+        game(description,runGame)
+    }
+    
+
+export default evenGame
+
+// проблема может заключаться в составлении правильного ответа,так как для каждоый игры он создается по-разному

@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const game = (playGame,description) => {
-  // PlayGame - какая именно игра будет передаваться
+const game = (description,runGame) => {
   // приветствие
   console.log('Welcome to the Brain Games!')
   const userName = readlineSync.question('May I have your name? ')
@@ -11,10 +10,11 @@ const game = (playGame,description) => {
   // цикл
   for (let i = 0 ; i < 3 ; i++) {
     // вопрос (question)
-    const question = Math.ceil(Math.random() * 100)
+    const [question, correctAnswer] = runGame()
     console.log('Question: ' + question)
     // ответ
     const answer = readlineSync.question('Your answer: ')
+
     // условие 
     if (answer !== correctAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
