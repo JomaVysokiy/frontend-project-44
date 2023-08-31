@@ -38,11 +38,9 @@ import game from '../index.js'
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 const isPrime = (num) => {
-  if (num < 2) {
-    return false
-  }
+  if (num < 2) return false 
 
-  for (let i = 2; i <= Math.sqrt(num); i++) {
+  for (let i = 2; i < num / 2; i++) {
     return num % i === 0 ? false : true
   }
 }
