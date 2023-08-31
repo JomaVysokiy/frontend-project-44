@@ -38,7 +38,13 @@ import game from '../index.js'
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 const isPrime = (num) => {
-  return (num < 2) ? false : true
+  if (num < 2) {
+    return false
+  }
+
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    return num % i === 0 ? false : true
+  }
 }
 
 const primeGame = () => {
@@ -46,16 +52,11 @@ const primeGame = () => {
   
   const num = Math.ceil(Math.random() * 100)
   const question = `${num}`
-        
-  for (let i = 2; i <= Math.sqrt(num); i++) {
-    return num % i === 0 ? false : true
-  }
 
-  let correctAnswer = 'no'
-  if (isPrime(num) === true) {
-    correctAnswer = 'yes'
+  let correctAnswer = 'yes'
+  if (!isPrime(num)) {
+    correctAnswer === 'no'
   }
-  // isPrime(num) === true ? correctAnswer = 'yes' : correctAnswer = 'no'
     return [question,correctAnswer]
   }
   game(description,runGame)
