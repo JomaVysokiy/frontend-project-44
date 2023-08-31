@@ -14,7 +14,7 @@ const isPrime = (num) => {
   }
 
   return true
-};
+}
 
 const primeGame = () => {
   const runGame = () => {
