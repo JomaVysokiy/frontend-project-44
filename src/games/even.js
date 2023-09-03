@@ -7,7 +7,7 @@ const numberIsEven = (num) => num % 2 === 0;
 const evenGame = () => {
   const runGame = () => {
     const num = Math.ceil(Math.random() * 100);
-    const question = `${num}`; 
+    const question = `${num}`;
     let correctAnswer = 'yes';
 
     if (!numberIsEven(num)) {

@@ -13,12 +13,10 @@ const progressionGame = () => {
         for (let i = 0; i <= 8; i += 1) {
             progression.push(progression[i] + num2);
         };
-      
         const randomIndex = Math.ceil(Math.random() * 9);
         const correctAnswer = `${progression[randomIndex]}`;
         progression[randomIndex] = '..';
         const question = `${progression.join(' ')}`;
-        
         return [question, correctAnswer];
     };
     game(description, runGame);
