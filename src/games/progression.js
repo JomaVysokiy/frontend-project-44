@@ -23,5 +23,4 @@ const progressionGame = () => {
     };
     game(description, runGame);
 };
-
 export default progressionGame;

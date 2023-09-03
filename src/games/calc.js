@@ -13,23 +13,22 @@ const calcGame = () => {
         let correctAnswer = 0;
 
         if (randomOperation === '+') {
-            const result =  num1 + num2;
+            const result = num1 + num2;
             correctAnswer = `${result}`;
-        };
+        }
 
         if (randomOperation === '-') {
-            const result =  num1 - num2;
+            const result = num1 - num2;
             correctAnswer = `${result}`;
-        };
+        }
 
         if (randomOperation === '*') {
-            const result =  num1 * num2;
+            const result = num1 * num2;
             correctAnswer = `${result}`;
-        };
+        }
 
         return [question, correctAnswer];
     };
     game(description, runGame);
 };
-
 export default calcGame;

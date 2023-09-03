@@ -32,5 +32,4 @@ const primeGame = () => {
 
   game(description, runGame);
 };
-
 export default primeGame;

@@ -13,14 +13,13 @@ const gcdGame = () => {
         function gcd(a, b) {
             if (b === 0) {
                 return a;
-            };
+            }
             return gcd(b, a % b);
-        };
-        
+        }
+
         const correctAnswer = `${gcd(num1, num2)}`;
         return [question, correctAnswer];
     };
     game(description, runGame);
 };
-
 export default gcdGame;
