@@ -17,7 +17,7 @@ const gcdGame = () => {
             return gcd(b, a % b);
         };
         
-        let correctAnswer = `${gcd(num1,num2)}`;
+        const correctAnswer = `${gcd(num1,num2)}`;
         return [question,correctAnswer];
     };
     game(description,runGame);

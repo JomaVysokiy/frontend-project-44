@@ -17,15 +17,15 @@ const isPrime = (num) => {
 };
 
 const primeGame = () => {
-  const runGame = () => {
-  
-  const num = Math.ceil(Math.random() * 100);
-  const question = `${num}`;
+  const runGame = () => { 
+    const num = Math.ceil(Math.random() * 100);
+    const question = `${num}`;
 
-  let correctAnswer = 'yes';
-  if (isPrime(num) === false) {
-    correctAnswer = 'no';
-  };
+    let correctAnswer = 'yes';
+
+    if (isPrime(num) === false) {
+      correctAnswer = 'no';
+    };
     return [question,correctAnswer];
   };
   game(description,runGame);
