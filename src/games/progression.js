@@ -14,7 +14,7 @@ const progressionGame = () => {
             progression.push(progression[i] + num2)
         }
       
-        const randomIndex = Math.ceil(Math.random() * 10)
+        const randomIndex = Math.ceil(Math.random() * 9)
         const correctAnswer = `${progression[randomIndex]}`
         progression[randomIndex] = '..'
         const question = `${progression.join(' ')}`
