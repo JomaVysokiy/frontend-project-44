@@ -12,10 +12,9 @@ const evenGame = () => {
 
     if (!numberIsEven(num)) {
       correctAnswer = 'no';
-    };
-    return [question, correctAnswer]
+    }
+    return [question, correctAnswer];
   };
   game(description, runGame);
 };
-    
 export default evenGame;
