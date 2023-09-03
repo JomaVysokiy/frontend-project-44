@@ -21,7 +21,7 @@ const primeGame = () => {
     const num = Math.ceil(Math.random() * 100);
     const question = `${num}`;
 
-    const correctAnswer = 'yes';
+    let correctAnswer = 'yes';
 
     if (isPrime(num) === false) {
       correctAnswer = 'no';
