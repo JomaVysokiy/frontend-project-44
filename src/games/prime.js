@@ -30,7 +30,7 @@ const primeGame = () => {
     return [question, correctAnswer];
     };
 
-    game(description, runGame);
+  game(description, runGame);
 };
 
 export default primeGame;
