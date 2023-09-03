@@ -19,9 +19,9 @@ const progressionGame = () => {
         progression[randomIndex] = '..';
         const question = `${progression.join(' ')}`;
         
-        return [question,correctAnswer];
+        return [question, correctAnswer];
     };
-    game(description,runGame);
+    game(description, runGame);
 };
 
 export default progressionGame;

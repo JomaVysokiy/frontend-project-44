@@ -17,10 +17,10 @@ const gcdGame = () => {
             return gcd(b, a % b);
         };
         
-        const correctAnswer = `${gcd(num1,num2)}`;
-        return [question,correctAnswer];
+        const correctAnswer = `${gcd(num1, num2)}`;
+        return [question, correctAnswer];
     };
-    game(description,runGame);
+    game(description, runGame);
 };
 
 export default gcdGame;

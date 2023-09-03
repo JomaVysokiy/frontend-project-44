@@ -1,7 +1,7 @@
 import game from '../index.js';
 
 const description = 'What is the result of the expression?';
-const operations = ['+','-','*'];
+const operations = ['+', '-', '*'];
 
 const calcGame = () => {
     const runGame = () => {
@@ -27,9 +27,9 @@ const calcGame = () => {
             correctAnswer = `${result}`;
         };
 
-        return [question,correctAnswer];
+        return [question, correctAnswer];
     };
-    game(description,runGame);
+    game(description, runGame);
 };
 
 export default calcGame;

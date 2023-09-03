@@ -21,14 +21,16 @@ const primeGame = () => {
     const num = Math.ceil(Math.random() * 100);
     const question = `${num}`;
 
-    let correctAnswer = 'yes';
+    const correctAnswer = 'yes';
 
     if (isPrime(num) === false) {
       correctAnswer = 'no';
     };
-    return [question,correctAnswer];
-  };
-  game(description,runGame);
+
+    return [question, correctAnswer];
+    };
+
+    game(description, runGame);
 };
 
 export default primeGame;
