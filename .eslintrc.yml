@@ -1,22 +1,26 @@
+plugins:
+  - fp
+
+extends:
+  - "airbnb-base"
+  - "plugin:fp/recommended"
+
 env:
-  browser: true
-  es2021: true
-extends: [
-  "eslint:recommended",
-  "plugin:react-hooks/recommended",
-  "plugin:import/recommended"
-],
-
-overrides: []
+  node: true
+  es2020: true
+ 
 parserOptions:
-  ecmaVersion: latest
-  sourceType: moduler
+  ecmaVersion: 2020
 
-rules: 
-import/extensions: "off"
-  no-console: "off"
-  no-var: "error"
-  import/extensions: 
-    - error
-    - js: always
+rules:
+  no-console: 0
+  import/extensions: 0
+  no-await-in-loop: 0
+  fp/no-loops: 0
+  fp/no-nil: 0
+  fp/no-unused-expression: 0
+  fp/no-let: 0
+  fp/no-throw: 0
+  fp/no-mutation: 0
+  fp/no-mutating-methods: 0
 
