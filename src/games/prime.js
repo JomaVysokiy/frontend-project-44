@@ -28,7 +28,7 @@ const primeGame = () => {
     }
 
     return [question, correctAnswer];
-    };
+  };
 
   game(description, runGame);
 };

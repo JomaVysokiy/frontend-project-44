@@ -8,21 +8,20 @@ const game = (description, runGame) => {
   // условие задания
   console.log(description);
   // цикл
-  for (let i = 0 ; i < 3 ; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     // вопрос (question)
     const [question, correctAnswer] = runGame();
-    console.log('Question: ' + question);
+    console.log(`'Question: '${question}`);
     // ответ
     const answer = readlineSync.question('Your answer: ');
 
-    // условие 
+    // условие
     if (answer !== correctAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      return ;
-    } else {
-      console.log('Correct!');
+      return;
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
 };
