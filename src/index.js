@@ -11,7 +11,7 @@ const game = (description, runGame) => {
   for (let i = 0; i < 3; i += 1) {
     // вопрос (question)
     const [question, correctAnswer] = runGame();
-    console.log(`'Question: '${question}`);
+    console.log(`Question: ${question}`);
     // ответ
     const answer = readlineSync.question('Your answer: ');
 
