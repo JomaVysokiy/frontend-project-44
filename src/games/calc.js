@@ -1,30 +1,32 @@
 import game from '../index.js';
+import getRandomNumber from '../generateRandomNumber.js';
 
 const description = 'What is the result of the expression?';
-const operations = ['+', '-', '*'];
 
-const calcGame = () => {
+const runCalcGame = () => {
   const runGame = () => {
-    const num1 = Math.ceil(Math.random() * 100);
-    const num2 = Math.ceil(Math.random() * 100);
+    const number1 = getRandomNumber();
+    const number2 = getRandomNumber();
+    const operations = ['+', '-', '*'];
     const randomOperation = operations[Math.floor(Math.random() * operations.length)];
-    const question = `${num1} ${randomOperation} ${num2}`;
-    let correctAnswer = 0;
-    if (randomOperation === '+') {
-      const result = num1 + num2;
-      correctAnswer = `${result}`;
-    }
-    if (randomOperation === '-') {
-      const result = num1 - num2;
-      correctAnswer = `${result}`;
-    }
-    if (randomOperation === '*') {
-      const result = num1 * num2;
-      correctAnswer = `${result}`;
-    }
+    const question = `${number1} ${randomOperation} ${number2}`;
 
+    let correctAnswer = 0;
+    switch (randomOperation) {
+      case '+':
+        correctAnswer = `${number1 + number2}`;
+        break;
+      case '-':
+        correctAnswer = `${number1 - number2}`;
+        break;
+      case '*':
+        correctAnswer = `${number1 * number2}`;
+        break;
+      default:
+        correctAnswer = null;
+    }
     return [question, correctAnswer];
   };
   game(description, runGame);
 };
-export default calcGame;
+export default runCalcGame;

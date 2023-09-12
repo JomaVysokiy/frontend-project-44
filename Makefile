@@ -1,5 +1,4 @@
-# Makefile
-install: # установить зависимости
+install:
 	npm ci 
 brain-prime:
 	node bin/brain-prime.js

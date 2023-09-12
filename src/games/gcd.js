@@ -1,25 +1,23 @@
 #!/usr/bin/env node
 import game from '../index.js';
+import getRandomNumber from '../generateRandomNumber.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const gcdGame = () => {
+const runGcdGame = () => {
   const runGame = () => {
-    const num1 = Math.ceil(Math.random() * 100);
-    const num2 = Math.ceil(Math.random() * 100);
+    const number1 = getRandomNumber();
+    const number2 = getRandomNumber();
 
-    const question = `${num1} ${num2}`;
+    const question = `${number1} ${number2}`;
 
     function gcd(a, b) {
-      if (b === 0) {
-        return a;
-      }
-      return gcd(b, a % b);
+      return (b === 0) ? a : gcd(b, a % b);
     }
 
-    const correctAnswer = `${gcd(num1, num2)}`;
+    const correctAnswer = `${gcd(number1, number2)}`;
     return [question, correctAnswer];
   };
   game(description, runGame);
 };
-export default gcdGame;
+export default runGcdGame;

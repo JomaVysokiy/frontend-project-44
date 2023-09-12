@@ -1,18 +1,22 @@
 #!/usr/bin/env node
 import game from '../index.js';
+import getRandomNumber from '../generateRandomNumber.js';
 
 const description = 'What number is missing in the progression?';
 
-const progressionGame = () => {
+const runProgressionGame = () => {
   const runGame = () => {
-    const num1 = Math.ceil(Math.random() * 100);
-    const num2 = Math.ceil(Math.random() * 100);
+    const number1 = getRandomNumber();
+    const number2 = getRandomNumber();
 
-    const progression = [num1];
-
-    for (let i = 0; i <= 8; i += 1) {
-      progression.push(progression[i] + num2);
+    function getProgression(firstNumber, secondNumber) {
+      const progression = [firstNumber];
+      for (let i = 0; i <= 8; i += 1) {
+        progression.push(progression[i] + secondNumber);
+      }
     }
+
+    const progression = getProgression(number1, number2);
     const randomIndex = Math.ceil(Math.random() * 9);
     const correctAnswer = `${progression[randomIndex]}`;
     progression[randomIndex] = '..';
@@ -21,4 +25,4 @@ const progressionGame = () => {
   };
   game(description, runGame);
 };
-export default progressionGame;
+export default runProgressionGame;
