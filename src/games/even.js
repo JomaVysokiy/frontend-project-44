@@ -9,7 +9,7 @@ const runEvenGame = () => {
   const runGame = () => {
     const number = getRandomNumber();
     const question = `${number}`;
-    const correctAnswer = numberIsEven() ? 'yes' : 'no';
+    const correctAnswer = numberIsEven(number) ? 'yes' : 'no';
     return [question, correctAnswer];
   };
   game(description, runGame);
