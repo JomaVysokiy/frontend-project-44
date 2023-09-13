@@ -11,9 +11,11 @@ const runProgressionGame = () => {
 
     function getProgression(firstNumber, secondNumber) {
       const progression = [firstNumber];
-      for (let i = 0; i <= 8; i += 1) {
+      const numberOfProgressionValues = 10 - 2;
+      for (let i = 0; i <= numberOfProgressionValues; i += 1) {
         progression.push(progression[i] + secondNumber);
       }
+      return progression;
     }
 
     const progression = getProgression(number1, number2);
