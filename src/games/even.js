@@ -8,7 +8,7 @@ const numberIsEven = (number) => number % 2 === 0;
 const runEvenGame = () => {
   const runGame = () => {
     const number = getRandomNumber();
-    const question = `${number}`;
+    const question = number.toString();
     const correctAnswer = numberIsEven(number) ? 'yes' : 'no';
     return [question, correctAnswer];
   };

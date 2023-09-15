@@ -21,13 +21,7 @@ const runPrimeGame = () => {
   const runGame = () => {
     const number = getRandomNumber();
     const question = `${number}`;
-
-    let correctAnswer = 'yes';
-
-    if (isPrime(number) === false) {
-      correctAnswer = 'no';
-    }
-
+    const correctAnswer = isPrime(number) === false ? 'no' : 'yes';
     return [question, correctAnswer];
   };
 
