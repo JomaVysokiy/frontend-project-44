@@ -26,11 +26,11 @@ const runCalcGame = () => {
     const number1 = getRandomNumber();
     const number2 = getRandomNumber();
     const operations = ['+', '-', '*'];
-    // const randomOperation = operations[Math.floor(Math.random() * operations.length)];
-    const lengtOfOperations = operations.length - 1;
-    const randomOperation = operations[getRandomNumber(0, lengtOfOperations)];
-    const question = `${number1} ${randomOperation} ${number2}`;
 
+    const lengtOfOperations = operations.length;
+    const randomOperation = operations[getRandomNumber(0, lengtOfOperations)];
+
+    const question = `${number1} ${randomOperation} ${number2}`;
     const correctAnswer = getCorrectAnswer(number1, number2, randomOperation);
 
     return [question, correctAnswer];
