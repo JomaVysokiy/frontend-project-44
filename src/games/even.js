@@ -1,17 +1,17 @@
-#!/usr/bin/env node
-import game from '../index.js';
-import getRandomNumber from '../generateRandomNumber.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
-const numberIsEven = (number) => number % 2 === 0;
+const isEven = (number) => number % 2 === 0;
+
+const runGame = () => {
+  const number = getRandomNumber(0, 100);
+  const question = number.toString();
+  const correctAnswer = isEven(number) ? 'yes' : 'no';
+  return [question, correctAnswer];
+};
 
 const runEvenGame = () => {
-  const runGame = () => {
-    const number = getRandomNumber();
-    const question = number.toString();
-    const correctAnswer = numberIsEven(number) ? 'yes' : 'no';
-    return [question, correctAnswer];
-  };
-  game(description, runGame);
+  runEngine(description, runGame);
 };
 export default runEvenGame;

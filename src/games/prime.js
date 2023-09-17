@@ -1,6 +1,5 @@
-#!/usr/bin/env node
-import game from '../index.js';
-import getRandomNumber from '../generateRandomNumber.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (number) => {
@@ -17,14 +16,14 @@ const isPrime = (number) => {
   return true;
 };
 
-const runPrimeGame = () => {
-  const runGame = () => {
-    const number = getRandomNumber();
-    const question = `${number}`;
-    const correctAnswer = isPrime(number) === false ? 'no' : 'yes';
-    return [question, correctAnswer];
-  };
+const runGame = () => {
+  const number = getRandomNumber(0, 100);
+  const question = number.toString();
+  const correctAnswer = isPrime(number) === false ? 'no' : 'yes';
+  return [question, correctAnswer];
+};
 
-  game(description, runGame);
+const runPrimeGame = () => {
+  runEngine(description, runGame);
 };
 export default runPrimeGame;

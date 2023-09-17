@@ -1,33 +1,32 @@
-#!/usr/bin/env node
-import game from '../index.js';
-import getRandomNumber from '../generateRandomNumber.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const description = 'What number is missing in the progression?';
 
 function getProgression(firstNumber, secondNumber, length = 10) {
   const progression = [firstNumber];
-  const numberOfProgressionValues = length - 2;
-  for (let i = 0; i <= numberOfProgressionValues; i += 1) {
+  const lastIndex = length - 1;
+  for (let i = 0; i < lastIndex; i += 1) {
     progression.push(progression[i] + secondNumber);
   }
   return progression;
 }
 
+const runGame = () => {
+  const number1 = getRandomNumber(0, 100);
+  const number2 = getRandomNumber(0, 100);
+
+  const progression = getProgression(number1, number2);
+  const randomIndex = getRandomNumber(0, progression.length);
+
+  const correctAnswer = progression[randomIndex].toString();
+  progression[randomIndex] = '..';
+  const question = progression.join(' ');
+
+  return [question, correctAnswer];
+};
+
 const runProgressionGame = () => {
-  const runGame = () => {
-    const number1 = getRandomNumber();
-    const number2 = getRandomNumber();
-
-    const progression = getProgression(number1, number2);
-    const lengthOfProgression = 10 - 1;
-    const randomIndex = getRandomNumber(0, lengthOfProgression);
-
-    const correctAnswer = progression[randomIndex].toString();
-    progression[randomIndex] = '..';
-    const question = `${progression.join(' ')}`;
-
-    return [question, correctAnswer];
-  };
-  game(description, runGame);
+  runEngine(description, runGame);
 };
 export default runProgressionGame;

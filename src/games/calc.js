@@ -1,40 +1,35 @@
-import game from '../index.js';
-import getRandomNumber from '../generateRandomNumber.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const description = 'What is the result of the expression?';
 
 function getCorrectAnswer(number1, number2, operation) {
-  let correctAnswer = 0;
   switch (operation) {
     case '+':
-      correctAnswer = `${number1 + number2}`;
-      break;
+      return `${number1 + number2}`;
     case '-':
-      correctAnswer = `${number1 - number2}`;
-      break;
+      return `${number1 - number2}`;
     case '*':
-      correctAnswer = `${number1 * number2}`;
-      break;
+      return `${number1 * number2}`;
     default:
-      correctAnswer = null;
+      throw new Error(`Unknown order state: '${operation}'!`);
   }
-  return correctAnswer;
 }
 
+const runGame = () => {
+  const number1 = getRandomNumber(0, 100);
+  const number2 = getRandomNumber(0, 100);
+  const operations = ['+', '-', '*'];
+
+  const randomOperation = operations[getRandomNumber(0, operations.length)];
+
+  const question = `${number1} ${randomOperation} ${number2}`;
+  const correctAnswer = getCorrectAnswer(number1, number2, randomOperation);
+
+  return [question, correctAnswer];
+};
+
 const runCalcGame = () => {
-  const runGame = () => {
-    const number1 = getRandomNumber();
-    const number2 = getRandomNumber();
-    const operations = ['+', '-', '*'];
-
-    const lengtOfOperations = operations.length;
-    const randomOperation = operations[getRandomNumber(0, lengtOfOperations)];
-
-    const question = `${number1} ${randomOperation} ${number2}`;
-    const correctAnswer = getCorrectAnswer(number1, number2, randomOperation);
-
-    return [question, correctAnswer];
-  };
-  game(description, runGame);
+  runEngine(description, runGame);
 };
 export default runCalcGame;
