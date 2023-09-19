@@ -7,15 +7,15 @@ function getGcd(a, b) {
   return (b === 0) ? a : getGcd(b, a % b);
 }
 
-const runGame = () => {
+const generateRound = () => {
   const number1 = getRandomNumber(0, 100);
   const number2 = getRandomNumber(0, 100);
   const question = `${number1} ${number2}`;
-  const correctAnswer = `${getGcd(number1, number2)}`;
-  return [question, correctAnswer];
+  const answer = `${getGcd(number1, number2)}`;
+  return [question, answer];
 };
 
 const runGcdGame = () => {
-  runEngine(description, runGame);
+  runEngine(description, generateRound);
 };
 export default runGcdGame;

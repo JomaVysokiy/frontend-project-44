@@ -16,14 +16,14 @@ const isPrime = (number) => {
   return true;
 };
 
-const runGame = () => {
+const generateRound = () => {
   const number = getRandomNumber(0, 100);
   const question = number.toString();
-  const correctAnswer = isPrime(number) === false ? 'no' : 'yes';
-  return [question, correctAnswer];
+  const answer = isPrime(number) === false ? 'no' : 'yes';
+  return [question, answer];
 };
 
 const runPrimeGame = () => {
-  runEngine(description, runGame);
+  runEngine(description, generateRound);
 };
 export default runPrimeGame;

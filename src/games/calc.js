@@ -3,7 +3,7 @@ import getRandomNumber from '../helpers.js';
 
 const description = 'What is the result of the expression?';
 
-function getCorrectAnswer(number1, number2, operation) {
+function calculate(number1, number2, operation) {
   switch (operation) {
     case '+':
       return `${number1 + number2}`;
@@ -16,20 +16,20 @@ function getCorrectAnswer(number1, number2, operation) {
   }
 }
 
-const runGame = () => {
+const generateRound = () => {
   const number1 = getRandomNumber(0, 100);
   const number2 = getRandomNumber(0, 100);
   const operations = ['+', '-', '*'];
 
-  const randomOperation = operations[getRandomNumber(0, operations.length)];
+  const randomOperation = operations[getRandomNumber(0, operations.length - 1)];
 
   const question = `${number1} ${randomOperation} ${number2}`;
-  const correctAnswer = getCorrectAnswer(number1, number2, randomOperation);
+  const answer = calculate(number1, number2, randomOperation);
 
-  return [question, correctAnswer];
+  return [question, answer];
 };
 
 const runCalcGame = () => {
-  runEngine(description, runGame);
+  runEngine(description, generateRound);
 };
 export default runCalcGame;
